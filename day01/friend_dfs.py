@@ -51,3 +51,41 @@ print()
 print("=== DFS: Jerry의 모든 친구 ===")
 result = dfs_friends(fr_info, 'Jerry')
 print(result)
+
+
+# 실습 3의 BFS 함수
+
+def bfs_friends(g, start):
+
+    qu = []
+
+    done = set()
+
+    qu.append(start)
+
+    done.add(start)
+
+    order = []
+
+    while qu:
+
+        p = qu.pop(0)
+
+        order.append(p)
+
+        for x in g[p]:
+
+            if x not in done:
+
+                qu.append(x)
+
+                done.add(x)
+
+    return order
+
+
+print("=== 비교: Summer에서 시작 ===")
+
+print("BFS:", bfs_friends(fr_info, 'Summer'))
+
+print("DFS:", dfs_friends(fr_info, 'Summer'))
