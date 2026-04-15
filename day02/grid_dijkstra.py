@@ -51,6 +51,8 @@ def grid_dijkstra(grid, start, goal):
 
     visited = set()
 
+    visit_count = 0
+
     while heap:
 
         cost, r, c = heapq.heappop(heap)
